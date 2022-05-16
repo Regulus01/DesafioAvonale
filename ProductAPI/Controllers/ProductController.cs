@@ -38,5 +38,38 @@ namespace ProductAPI.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(long id)
+        {
+            var status = await _repository.Delete(id);
+            if (!status)
+            {
+                return BadRequest();
+            }
+            return Ok(status);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProductVO>>> FindByAll()
+        {
+            var products = await _repository.FindAll();
+            return Ok(products);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> FindById(long id)
+        {
+            var product = await _repository.FindById(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
+        }
+
+
+
+
+
     }
 }
