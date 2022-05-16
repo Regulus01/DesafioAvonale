@@ -1,4 +1,4 @@
-﻿using ProductAPI.Models;
+﻿using ProductAPI.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,10 +6,9 @@ namespace ProductAPI.Repository
 {
     public interface IProductRepository
     {
-        Task<IEnumerable<Product>> FindAll();
-        Task<IEnumerable<Product>> FindById();
-        Task<IEnumerable<Product>> Create(Product name);
-        Task<IEnumerable<Product>> Update(Product name);
-        Task<bool> Delete(long name);
+        Task<IEnumerable<ProductVO>> FindAll();
+        Task<ProductVO> FindById(long id);
+        Task<ProductVO> Create(ProductVO vo);
+        Task<bool> Delete(long id);
     }
 }
