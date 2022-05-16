@@ -28,7 +28,7 @@ namespace ProductAPI
             services.AddControllers();
             var connection = services.AddDbContext<SqlServerContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SqlServerContext"), builder =>
-            builder.MigrationsAssembly("DesafioAvonale")));
+            builder.MigrationsAssembly("ProductAPI")));
 
             //Mapper dependences 
             IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
@@ -48,16 +48,10 @@ namespace ProductAPI
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                c.RoutePrefix = string.Empty;
-            });
 
             app.UseHttpsRedirection();
 
