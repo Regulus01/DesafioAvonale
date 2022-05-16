@@ -1,12 +1,17 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProductAPI.Config;
+using ProductAPI.Models.Context;
+using ProductAPI.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +32,18 @@ namespace ProductAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            var connection = services.AddDbContext<SqlServerContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("SqlServerContext"), builder =>
+            builder.MigrationsAssembly("DesafioAvonale")));
 
-              services.AddSwaggerGen(c =>
+            //Mapper dependences 
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddControllers();
+
+            services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Avonale Desafio", Version = "v1" });
             });
