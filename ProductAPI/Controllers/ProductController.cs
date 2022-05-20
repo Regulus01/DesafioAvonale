@@ -4,7 +4,6 @@ using ProductAPI.Repository;
 using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace ProductAPI.Controllers
