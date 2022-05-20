@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,7 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PaymentsAPI.Config;
 using PaymentsAPI.Model.Context;
+using PaymentsAPI.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +39,12 @@ namespace PaymentsAPI
             options.UseSqlServer(Configuration.GetConnectionString("SqlServerContext"), builder =>
             builder.MigrationsAssembly("PaymentsAPI")));
 
+            //Mapper dependences 
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IPaymentsRepository, PaymentsRepository>();
+            services.AddControllers();
 
             services.AddSwaggerGen(c =>
             {
