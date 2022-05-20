@@ -22,11 +22,11 @@ namespace PaymentsAPI.Repository
             Payments payments = _mapper.Map<Payments>(vo);
             if(payments.Value >= 100)
             {
-                payments.Status = "Aprovado";
+                payments.Status = "APROVADO";
             }
             else
             {
-                payments.Status = "Reprovado";
+                payments.Status = "REJEITADO";
             }
             _context.Payments.Add(payments);
             await _context.SaveChangesAsync();

@@ -16,6 +16,25 @@ namespace PaymentsAPI.Model.Context
         }
 
         public DbSet<Payments> Payments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Payments>().HasData(new Payments
+            {
+                Id = 1,
+                Value = 200.0,
+                Status = "REJEITADO"
+
+            });
+
+            modelBuilder.Entity<Payments>().HasData(new Payments
+            {
+                Id = 2,
+                Value = 50.0,
+                Status = "REJEITADO"
+
+            });
+        }
     }
 }
 
