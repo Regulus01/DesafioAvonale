@@ -66,3 +66,4 @@ G:\My Drive\Avonale\DesafioAvonale\ProductAPI\bin\Debug\netcoreapp3.1\runtimes\u
 G:\My Drive\Avonale\DesafioAvonale\ProductAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 G:\My Drive\Avonale\DesafioAvonale\ProductAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 G:\My Drive\Avonale\DesafioAvonale\ProductAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+G:\My Drive\Avonale\DesafioAvonale\ProductAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll

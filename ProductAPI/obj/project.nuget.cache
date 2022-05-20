@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RajVFHvefNU8lp4ZG+muYDHSaxcrkdgpzB/0ibFMFzPIUhjSHwoFpEk0QBCAEMzZX1qoA5uiS/043pob0mY0sw==",
+  "dgSpecHash": "S5gxHoMr24Z4ADtcXZDGB58d+Ld//g+89RwJ7i1I0c6V9M7ixQVJjUVsy65sn2Rdv0G8QeFJQ3/nE4XGjHX8/w==",
   "success": true,
   "projectFilePath": "G:\\My Drive\\Avonale\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.1\\swashbuckle.aspnetcore.6.3.1.nupkg.sha512",
+    "C:\\Users\\jsous\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.3.1\\swashbuckle.aspnetcore.annotations.6.3.1.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.1\\swashbuckle.aspnetcore.swaggerui.6.3.1.nupkg.sha512",

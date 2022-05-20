@@ -26,6 +26,7 @@ namespace ProductAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //database dependences
             var connection = services.AddDbContext<SqlServerContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("SqlServerContext"), builder =>
             builder.MigrationsAssembly("ProductAPI")));
@@ -39,6 +40,7 @@ namespace ProductAPI
 
             services.AddSwaggerGen(c =>
             {
+                c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Avonale Desafio", Version = "v1" });
             });
         }

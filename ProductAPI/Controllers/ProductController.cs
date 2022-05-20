@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductAPI.Data;
 using ProductAPI.Repository;
+using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -20,6 +21,7 @@ namespace ProductAPI.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(Summary = "Create Product")]
         public async Task<ActionResult<ProductVO>> Create([FromBody] ProductVO vo)
         {
             if (vo == null)
@@ -39,6 +41,7 @@ namespace ProductAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [SwaggerOperation(Summary = "Delete product for Id")]
         public async Task<ActionResult> Delete(long id)
         {
             var status = await _repository.Delete(id);
@@ -50,6 +53,7 @@ namespace ProductAPI.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(Summary = "List All Products")]
         public async Task<ActionResult<IEnumerable<ProductVO>>> FindByAll()
         {
             var products = await _repository.FindAll();
@@ -57,6 +61,7 @@ namespace ProductAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerOperation(Summary = "Get Product for Id")]
         public async Task<ActionResult> FindById(long id)
         {
             var product = await _repository.FindById(id);
