@@ -41,7 +41,7 @@ namespace ProductAPI
             services.AddSwaggerGen(c =>
             {
                 c.EnableAnnotations();
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Avonale Desafio", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Avonale ProductAPI", Version = "v1" });
             });
         }
 
