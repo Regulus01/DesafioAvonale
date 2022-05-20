@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PaymentsAPI.Model.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,12 @@ namespace PaymentsAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddControllers();
+            //database dependences
+            var connection = services.AddDbContext<SqlServerContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("SqlServerContext"), builder =>
+            builder.MigrationsAssembly("PaymentsAPI")));
 
 
             services.AddSwaggerGen(c =>
