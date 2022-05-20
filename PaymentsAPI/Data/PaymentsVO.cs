@@ -1,6 +1,4 @@
-﻿
-
-namespace PaymentsAPI.Data
+﻿namespace PaymentsAPI.Data
 {
     public class PaymentsVO
     {

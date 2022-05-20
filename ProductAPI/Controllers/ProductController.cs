@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductAPI.Data;
+using ProductAPI.Models;
 using ProductAPI.Repository;
 using Swashbuckle.AspNetCore.Annotations;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProductAPI.Controllers
 {
-    [Route("api/product")]
+    [Route("api")]
     [ApiController]
     public partial class ProductController : Controller
     {
@@ -19,7 +20,7 @@ namespace ProductAPI.Controllers
             _repository = repository ?? throw new ArgumentException(nameof(repository));
         }
 
-        [HttpPost]
+        [HttpPost("product")]
         [SwaggerOperation(Summary = "Create Product")]
         public async Task<ActionResult<ProductVO>> Create([FromBody] ProductVO vo)
         {
@@ -39,7 +40,7 @@ namespace ProductAPI.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("product/{id}")]
         [SwaggerOperation(Summary = "Delete product for Id")]
         public async Task<ActionResult> Delete(long id)
         {
@@ -51,7 +52,7 @@ namespace ProductAPI.Controllers
             return Ok(status);
         }
 
-        [HttpGet]
+        [HttpGet("product")]
         [SwaggerOperation(Summary = "List All Products")]
         public async Task<ActionResult<IEnumerable<ProductVO>>> FindByAll()
         {
@@ -59,7 +60,7 @@ namespace ProductAPI.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("product/{id}")]
         [SwaggerOperation(Summary = "Get Product for Id")]
         public async Task<ActionResult> FindById(long id)
         {
@@ -68,6 +69,16 @@ namespace ProductAPI.Controllers
             {
                 return NotFound();
             }
+            return Ok(product);
+        }
+
+        [HttpPost("compras")]
+        [SwaggerOperation(Summary = "Buy Product for Id")]
+        public async Task<ActionResult> BuyProduct(long id, int qtdComprada, Card card)
+        {
+        
+            var product = await _repository.BuyProduct(id, qtdComprada, card);
+  
             return Ok(product);
         }
 

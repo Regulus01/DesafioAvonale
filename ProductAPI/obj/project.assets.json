@@ -426,6 +426,20 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.OData.Edm/7.10.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OData.Edm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OData.Edm.dll": {}
+        }
+      },
       "Microsoft.OpenApi/1.3.1": {
         "type": "package",
         "compile": {
@@ -433,6 +447,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
+      "Microsoft.OpenApi.OData/1.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OData.Edm": "7.10.0",
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.OData.Reader.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.OData.Reader.dll": {}
         }
       },
       "Microsoft.Win32.Registry/4.5.0": {
@@ -1468,6 +1495,24 @@
           "ref/netstandard1.3/System.Text.Encoding.Extensions.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "System.Text.Json/4.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1615,6 +1660,31 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "PaymentsAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.25",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.25",
+          "Microsoft.OpenApi.OData": "1.0.10",
+          "Swashbuckle.AspNetCore": "6.3.1",
+          "Swashbuckle.AspNetCore.Annotations": "6.3.1",
+          "Swashbuckle.AspNetCore.Swagger": "6.3.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.3.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.3.1"
+        },
+        "compile": {
+          "bin/placeholder/PaymentsAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentsAPI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -2539,6 +2609,23 @@
         "runtime.json"
       ]
     },
+    "Microsoft.OData.Edm/7.10.0": {
+      "sha512": "4s7OeXGqa4K5fgLV+P9YIJHis5BUnqa9iVHO000qZXsiVpz4MGSRekE9IF+adRFq2QvGvvADtOUahGUGW4tRSw==",
+      "type": "package",
+      "path": "microsoft.odata.edm/7.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.OData.Edm.dll",
+        "lib/net45/Microsoft.OData.Edm.xml",
+        "lib/netstandard1.1/Microsoft.OData.Edm.dll",
+        "lib/netstandard1.1/Microsoft.OData.Edm.xml",
+        "lib/netstandard2.0/Microsoft.OData.Edm.dll",
+        "lib/netstandard2.0/Microsoft.OData.Edm.xml",
+        "microsoft.odata.edm.7.10.0.nupkg.sha512",
+        "microsoft.odata.edm.nuspec"
+      ]
+    },
     "Microsoft.OpenApi/1.3.1": {
       "sha512": "2X5CCFJCnx6v86fnpOg4TKlU1ba7MSf1yakeT7VI4846s7i6fOkERwStX94Rcq8wJsLyQYsUitd6vR38viePeA==",
       "type": "package",
@@ -2551,6 +2638,20 @@
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
         "microsoft.openapi.1.3.1.nupkg.sha512",
         "microsoft.openapi.nuspec"
+      ]
+    },
+    "Microsoft.OpenApi.OData/1.0.10": {
+      "sha512": "Jv7ZKFB8o+fR/qQgCX/ZSCkoojLVK2DS1kBEKTL4jFVndCe/GpKZS8O3sswNuxZIWrLVq6zBVVG58E7XwRRKTA==",
+      "type": "package",
+      "path": "microsoft.openapi.odata/1.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/Microsoft.OpenApi.OData.Reader.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.OData.Reader.xml",
+        "microsoft.openapi.odata.1.0.10.nupkg.sha512",
+        "microsoft.openapi.odata.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.5.0": {
@@ -5738,6 +5839,51 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
+    "System.Text.Encodings.Web/4.7.2": {
+      "sha512": "iTUgB/WtrZ1sWZs84F2hwyQhiRH6QNjQv2DkwrH+WP6RoFga2Q1m3f9/Q7FG8cck8AdHitQkmkXSY8qylcDmuA==",
+      "type": "package",
+      "path": "system.text.encodings.web/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Encodings.Web.dll",
+        "lib/net461/System.Text.Encodings.Web.xml",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.1/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.1/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.4.7.2.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Json/4.6.0": {
+      "sha512": "4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
+      "type": "package",
+      "path": "system.text.json/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.4.6.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
@@ -6229,6 +6375,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "PaymentsAPI/1.0.0": {
+      "type": "project",
+      "path": "../PaymentsAPI/PaymentsAPI.csproj",
+      "msbuildProject": "../PaymentsAPI/PaymentsAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6241,6 +6392,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.25",
       "Microsoft.Extensions.ApiDescription.Server >= 6.0.5",
       "Microsoft.OpenApi >= 1.3.1",
+      "PaymentsAPI >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.3.1",
       "Swashbuckle.AspNetCore.Annotations >= 6.3.1",
       "Swashbuckle.AspNetCore.Swagger >= 6.3.1",
@@ -6281,7 +6433,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "G:\\My Drive\\Avonale\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj": {
+              "projectPath": "G:\\My Drive\\Avonale\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

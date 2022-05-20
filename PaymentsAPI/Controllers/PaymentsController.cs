@@ -29,8 +29,8 @@ namespace PaymentsAPI.Controllers
 
             try
             {
-                var product = await _repository.Create(vo);
-                return Ok(product);
+                var payment = await _repository.Create(vo);
+                return Ok(payment);
             }
             catch (Exception)
             {

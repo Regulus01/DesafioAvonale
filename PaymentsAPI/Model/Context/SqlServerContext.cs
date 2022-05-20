@@ -23,7 +23,7 @@ namespace PaymentsAPI.Model.Context
             {
                 Id = 1,
                 Value = 200.0,
-                Status = "REJEITADO"
+                Status = "Aprovado"
 
             });
 
@@ -31,7 +31,7 @@ namespace PaymentsAPI.Model.Context
             {
                 Id = 2,
                 Value = 50.0,
-                Status = "REJEITADO"
+                Status = "Rejeitado"
 
             });
         }

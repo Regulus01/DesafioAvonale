@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PaymentsAPI.Controllers;
+using PaymentsAPI.Data;
+using PaymentsAPI.Repository;
 using ProductAPI.Data;
 using ProductAPI.Models;
 using ProductAPI.Models.Context;
@@ -14,12 +17,14 @@ namespace ProductAPI.Repository
     {
         private readonly SqlServerContext _context;
         private IMapper _mapper;
+        private readonly IPaymentsRepository _repository;
 
         public ProductRepository(SqlServerContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
+
 
         public async Task<ProductVO> Create(ProductVO vo)
         {
@@ -58,6 +63,27 @@ namespace ProductAPI.Repository
         {
             Product product = await _context.Products.Where(p => p.Id == id)
                               .FirstOrDefaultAsync();
+            return _mapper.Map<ProductVO>(product);
+        }
+
+        public async Task<ProductVO> BuyProduct(long id, int qtdComprada, Card card)
+        {
+
+
+            Product product = await _context.Products.Where(p => p.Id == id)
+                             .FirstOrDefaultAsync();
+
+            PaymentsVO paymentsVO = new PaymentsVO();
+            paymentsVO.Value = product.UnitaryValue;
+
+            PaymentsController task = new PaymentsController(_repository);
+            var response = await task.Create(paymentsVO);
+
+
+            product.QtdEtoque -= qtdComprada;
+            await _context.SaveChangesAsync();
+
+
             return _mapper.Map<ProductVO>(product);
         }
 
