@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bjhQItbSiiKKX4HRK7lIKm5dUG1FFccZIfqmy7cOB0Hjz5VNIuXtYL06MlWYAz5ireH5x12oeGjzPhn0vjv+XA==",
+  "dgSpecHash": "odSm5A9FbmKsRHv6oN40m4krhMcWT4npECzLL/ofBGRGOOav6R4oCEPQ6rHX9BwGJVS3wpwpPOQqMC6JgXMc0w==",
   "success": true,
-  "projectFilePath": "G:\\My Drive\\Avonale\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
+  "projectFilePath": "H:\\My Drive\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jsous\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
