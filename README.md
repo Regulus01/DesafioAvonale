@@ -14,7 +14,8 @@
 
 ### O que é necessário para usar?
 + Sql server instalado
-+ Em Package Manager utilize o comando -> update-database
++ Em Package Manager console (selecione como projeto padrão ProductAPI) utilize o comando -> update-database
++ Em Package Manager console (selecione como projeto padrão PaymentsAPI) utilize o comando -> update-database
 
 ## Tecnologias Usadas
 
