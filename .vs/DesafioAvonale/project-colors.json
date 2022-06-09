@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "79d76496-f357-40f8-8365-26c6d36cc227": {
+      "ProjectGuid": "79d76496-f357-40f8-8365-26c6d36cc227",
+      "DisplayName": "ProductAPI",
+      "ColorIndex": 0
+    },
+    "702861db-6e85-40d7-9b22-5380cdfa35a1": {
+      "ProjectGuid": "702861db-6e85-40d7-9b22-5380cdfa35a1",
+      "DisplayName": "PaymentsAPI",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

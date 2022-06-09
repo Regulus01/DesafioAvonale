@@ -1,11 +1,16 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using PaymentsAPI.Data;
+using PaymentsAPI.Model;
 using ProductAPI.Data;
 using ProductAPI.Models;
 using ProductAPI.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductAPI.Repository
@@ -62,15 +67,66 @@ namespace ProductAPI.Repository
             return _mapper.Map<ProductVO>(product);
         }
 
-        public async Task<ProductVO> BuyProduct(long id, int qtdComprada, Card card)
+        public async Task<PaymentsVO> BuyProduct(long id, int qtdComprada, Card card)
         {
-
+            string payApi = "https://localhost:44340/api/product/payments/purchase";
             Product product = await _context.Products.Where(p => p.Id == id)
-                             .FirstOrDefaultAsync();
+                      .FirstOrDefaultAsync();
 
-            product.QtdEtoque -= qtdComprada;
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ProductVO>(product);
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var payment = new PaymentsVO();
+                    
+                    if(product.QtdEtoque < 1)
+                    {
+                        throw new Exception("Sem estoque");
+                    }
+
+                    payment.Value = qtdComprada * product.UnitaryValue;
+                    
+                    payment.Status = " ";
+                    string jsonObject = JsonConvert.SerializeObject(payment);
+                    var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+                    var response = client.PostAsync(payApi, content);
+                    response.Wait();
+                    if (response.Result.IsSuccessStatusCode)
+                    {
+                        var returnPayment = response.Result.Content.ReadAsStringAsync();
+
+                        var paymentCreated = JsonConvert.DeserializeObject<Payments>(returnPayment.Result);
+
+                        var paymentVO = new PaymentsVO();
+                        paymentVO.Status = paymentCreated.Status;
+                        paymentVO.Value = paymentCreated.Value;
+
+                        if (paymentCreated.Status == "APROVADO")
+                        {
+                            product.QtdEtoque -= qtdComprada;
+                            await _context.SaveChangesAsync();
+           
+
+                            return _mapper.Map<PaymentsVO>(paymentVO);
+                        }
+                        else
+
+                        {
+                            return _mapper.Map<PaymentsVO>(paymentVO);
+                        }
+                        
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro e o pagamento não foi realizado." + ex);
+            }
+
+
+            throw new Exception("Ocorreu um erro e o pagamento não foi realizado.");
+
         }
 
     }

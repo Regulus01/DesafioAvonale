@@ -6380,11 +6380,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\My Drive\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj",
+      "projectUniqueName": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj",
       "projectName": "PaymentsAPI",
-      "projectPath": "H:\\My Drive\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj",
+      "projectPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj",
       "packagesPath": "C:\\Users\\jsous\\.nuget\\packages\\",
-      "outputPath": "H:\\My Drive\\DesafioAvonale\\PaymentsAPI\\obj\\",
+      "outputPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\PaymentsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6495,7 +6495,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

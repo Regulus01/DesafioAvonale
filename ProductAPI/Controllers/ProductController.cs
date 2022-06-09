@@ -78,7 +78,6 @@ namespace ProductAPI.Controllers
         {
         
             var product = await _repository.BuyProduct(id, qtdComprada, card);
-  
             return Ok(product);
         }
 
