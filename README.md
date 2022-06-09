@@ -1,7 +1,7 @@
 # DesafioAvonale
 
 + Api feita como prova para o processo seletivo da Avonale
-+ A função de comprar produto da API Produto NÃO solicita aprovação da Api de pagamentos
++ A função de comprar produto da API Produto solicita aprovação da Api de pagamentos
 
 ## API de Produto
 
