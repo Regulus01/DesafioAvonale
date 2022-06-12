@@ -72,12 +72,12 @@ namespace ProductAPI.Repository
             string payApi = "https://localhost:44340/api/product/payments/purchase";
             Product product = await _context.Products.Where(p => p.Id == id)
                       .FirstOrDefaultAsync();
-
+            
             try
             {
                 using (var client = new HttpClient())
                 {
-                    var payment = new PaymentsVO();
+                    Payments payment = new Payments();
                     
                     if(product.QtdEtoque < 1)
                     {
@@ -85,9 +85,8 @@ namespace ProductAPI.Repository
                     }
 
                     payment.Value = qtdComprada * product.UnitaryValue;
-                    payment.ApprovePayment(payment.Value);
                     
-                    string jsonObject = JsonConvert.SerializeObject(payment);
+                    var jsonObject = JsonConvert.SerializeObject(payment);
                     var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
 
                     var response = client.PostAsync(payApi, content);
@@ -96,27 +95,22 @@ namespace ProductAPI.Repository
                     {
                         var returnPayment = response.Result.Content.ReadAsStringAsync();
 
-                        var paymentCreated = JsonConvert.DeserializeObject<Payments>(returnPayment.Result);
 
-                        var paymentVO = new PaymentsVO
-                        {                          
-                            Value = paymentCreated.Value
-                        };
-
-                        paymentVO.ApprovePayment(paymentCreated.Value);
+                        var paymentCreated = JsonConvert.DeserializeObject<PaymentsVO>(returnPayment.Result);
+                        
 
                         if (paymentCreated.Status == "APROVADO")
                         {
                             product.QtdEtoque -= qtdComprada;
                             await _context.SaveChangesAsync();
-           
-
-                            return _mapper.Map<PaymentsVO>(paymentVO);
+                      
+                            return paymentCreated;
                         }
                         else
 
                         {
-                            return _mapper.Map<PaymentsVO>(paymentVO);
+             
+                            return paymentCreated;
                         }
                         
                     }

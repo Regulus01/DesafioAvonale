@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z6NH9bX6rPATH3oV752Pzg1uytV6nxOH2AEGizjHOWZf62enjrxOQUfGBzd+2FpIs2w9/muXHzXlKxb/3LIPkw==",
+  "dgSpecHash": "Sd5ARLLOcxF7cqdXSm0sv8xkzWgJKaSidJ7TIVLLMPHXZtd8/te0aZExmkP9tQoEJxB931M17uM2luteY+yheQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj",
+  "projectFilePath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jsous\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",

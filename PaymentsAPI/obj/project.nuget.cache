@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FQ41oZBaUWRUAfMU1vXzzi20WhixWbSZSsuZ6Ufo48RYmIJSBL9AE3ZbXo1muoqmrPk31VJk9SIj2IoGIJoisg==",
+  "dgSpecHash": "EWPBMnIwtp0gav/KH7lg6CT1YjYbUz6FlXKGF91gjmoQvBh4X4JO2noZNmkDdJ4A0CzHjxP9T1U1FpXBJyOM+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj",
+  "projectFilePath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jsous\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\jsous\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

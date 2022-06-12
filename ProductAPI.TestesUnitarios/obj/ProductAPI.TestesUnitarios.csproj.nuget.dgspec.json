@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj": {}
+    "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj": {
+    "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj",
+        "projectUniqueName": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj",
         "projectName": "ProductAPI.TestesUnitarios",
-        "projectPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj",
+        "projectPath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI.TestesUnitarios\\ProductAPI.TestesUnitarios.csproj",
         "packagesPath": "C:\\Users\\jsous\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI.TestesUnitarios\\obj\\",
+        "outputPath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI.TestesUnitarios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

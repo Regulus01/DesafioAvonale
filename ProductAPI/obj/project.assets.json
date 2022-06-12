@@ -6408,11 +6408,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
+      "projectUniqueName": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
       "projectName": "ProductAPI",
-      "projectPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
+      "projectPath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI\\ProductAPI.csproj",
       "packagesPath": "C:\\Users\\jsous\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\ProductAPI\\obj\\",
+      "outputPath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\ProductAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6434,8 +6434,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj": {
-              "projectPath": "C:\\Users\\jsous\\Desktop\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj"
+            "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj": {
+              "projectPath": "C:\\Users\\jsous\\Desktop\\Estudo API\\DesafioAvonale\\PaymentsAPI\\PaymentsAPI.csproj"
             }
           }
         }
