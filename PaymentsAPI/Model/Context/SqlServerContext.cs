@@ -23,15 +23,14 @@ namespace PaymentsAPI.Model.Context
             {
                 Id = 1,
                 Value = 200.0,
-                Status = "Aprovado"
-
-            });
+                
+            }
+            );
 
             modelBuilder.Entity<Payments>().HasData(new Payments
             {
                 Id = 2,
                 Value = 50.0,
-                Status = "Rejeitado"
 
             });
         }

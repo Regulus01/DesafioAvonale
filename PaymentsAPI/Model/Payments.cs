@@ -11,6 +11,20 @@ namespace PaymentsAPI.Model
         public double Value { get; set; }
         [Column("Status")]
         [Range(1, 8)]
-        public string Status {get; set; }
+        public string Status {get; private set; }
+
+
+        public void ApprovePayment(double value)
+        {
+            if (value >= 100)
+            {
+                Status = "APROVADO";
+            }
+            else
+            {
+                Status = "REJEITADO";
+            }
+        }
+
     }
 }

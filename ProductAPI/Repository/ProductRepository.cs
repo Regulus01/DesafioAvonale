@@ -85,8 +85,8 @@ namespace ProductAPI.Repository
                     }
 
                     payment.Value = qtdComprada * product.UnitaryValue;
+                    payment.ApprovePayment(payment.Value);
                     
-                    payment.Status = " ";
                     string jsonObject = JsonConvert.SerializeObject(payment);
                     var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
 
@@ -98,9 +98,12 @@ namespace ProductAPI.Repository
 
                         var paymentCreated = JsonConvert.DeserializeObject<Payments>(returnPayment.Result);
 
-                        var paymentVO = new PaymentsVO();
-                        paymentVO.Status = paymentCreated.Status;
-                        paymentVO.Value = paymentCreated.Value;
+                        var paymentVO = new PaymentsVO
+                        {                          
+                            Value = paymentCreated.Value
+                        };
+
+                        paymentVO.ApprovePayment(paymentCreated.Value);
 
                         if (paymentCreated.Status == "APROVADO")
                         {

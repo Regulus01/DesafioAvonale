@@ -20,14 +20,7 @@ namespace PaymentsAPI.Repository
         public async Task<PaymentsVO> Create(PaymentsVO vo)
         {
             Payments payments = _mapper.Map<Payments>(vo);
-            if(payments.Value >= 100)
-            {
-                payments.Status = "APROVADO";
-            }
-            else
-            {
-                payments.Status = "REJEITADO";
-            }
+            payments.ApprovePayment(payments.Value);
             _context.Payments.Add(payments);
             await _context.SaveChangesAsync();
             return _mapper.Map<PaymentsVO>(payments);
