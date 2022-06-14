@@ -19,5 +19,11 @@ namespace ProductAPI.Models
         [Column("Estoque")]
         [Required]
         public int QtdEtoque { get; set; }
+
+
+        public double TotalValue(int qtdItens)
+        {
+            return qtdItens * UnitaryValue;
+        }
     }
 }

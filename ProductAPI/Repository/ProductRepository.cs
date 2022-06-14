@@ -84,7 +84,8 @@ namespace ProductAPI.Repository
                         throw new Exception("Sem estoque");
                     }
 
-                    payment.Value = qtdComprada * product.UnitaryValue;
+                    payment.Value = product.TotalValue(qtdComprada);
+                        
                     
                     var jsonObject = JsonConvert.SerializeObject(payment);
                     var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");

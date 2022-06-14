@@ -10,7 +10,27 @@
       "ProjectGuid": "702861db-6e85-40d7-9b22-5380cdfa35a1",
       "DisplayName": "PaymentsAPI",
       "ColorIndex": 1
+    },
+    "a0c7c4a4-482a-4cde-b487-1c5b1368929f": {
+      "ProjectGuid": "a0c7c4a4-482a-4cde-b487-1c5b1368929f",
+      "DisplayName": "ProductAPI.TestesUnitarios",
+      "ColorIndex": 2
+    },
+    "cb970f99-2597-4bfb-bc45-16c5a1c4aea0": {
+      "ProjectGuid": "cb970f99-2597-4bfb-bc45-16c5a1c4aea0",
+      "DisplayName": "PaymentsAPI.UnitTests",
+      "ColorIndex": 3
+    },
+    "2a18707d-c9af-4ffe-8f05-6b7e99670b4d": {
+      "ProjectGuid": "2a18707d-c9af-4ffe-8f05-6b7e99670b4d",
+      "DisplayName": "ProductAPI.UnitTests",
+      "ColorIndex": 4
+    },
+    "eb06eeb5-a5be-48df-a5d9-e7b65be9f29f": {
+      "ProjectGuid": "eb06eeb5-a5be-48df-a5d9-e7b65be9f29f",
+      "DisplayName": "ProductAPITests",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 6
 }
